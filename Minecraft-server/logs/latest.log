@@ -7774,3 +7774,32 @@ com.google.gson.JsonSyntaxException: Expected item to be an item, was unknown st
 [16Apr2024 22:24:53.288] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 2001ms or 40 ticks behind
 [16Apr2024 22:27:58.444] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: santutu lost connection: Disconnected
 [16Apr2024 22:27:58.445] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: santutu left the game
+[16Apr2024 22:32:07.962] [Server console handler/ERROR] [net.minecraft.server.dedicated.DedicatedServer/]: Caught previously unhandled exception :
+java.io.IOError: java.io.InterruptedIOException: Command interrupted
+	at org.jline.terminal.impl.AbstractPosixTerminal.setAttributes(AbstractPosixTerminal.java:54) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.reader.impl.LineReaderImpl.readLine(LineReaderImpl.java:650) ~[jline-reader-3.12.1.jar%2363!/:?]
+	at org.jline.reader.impl.LineReaderImpl.readLine(LineReaderImpl.java:418) ~[jline-reader-3.12.1.jar%2363!/:?]
+	at net.minecraftforge.server.console.TerminalHandler.handleCommands(TerminalHandler.java:46) ~[forge-1.20.1-47.2.23-universal.jar%23708!/:?]
+	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:84) ~[server-1.20.1-20230612.114412-srg.jar%23703!/:?]
+Caused by: java.io.InterruptedIOException: Command interrupted
+	at org.jline.utils.ExecHelper.exec(ExecHelper.java:46) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.ExecPty.doGetConfig(ExecPty.java:175) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.ExecPty.getAttr(ExecPty.java:87) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.ExecPty.doSetAttr(ExecPty.java:93) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.AbstractPty.setAttr(AbstractPty.java:29) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.AbstractPosixTerminal.setAttributes(AbstractPosixTerminal.java:52) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	... 4 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1691) ~[?:?]
+	at java.lang.ProcessImpl.waitFor(ProcessImpl.java:425) ~[?:?]
+	at org.jline.utils.ExecHelper.waitAndCapture(ExecHelper.java:66) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.utils.ExecHelper.exec(ExecHelper.java:36) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.ExecPty.doGetConfig(ExecPty.java:175) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.ExecPty.getAttr(ExecPty.java:87) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.ExecPty.doSetAttr(ExecPty.java:93) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.AbstractPty.setAttr(AbstractPty.java:29) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	at org.jline.terminal.impl.AbstractPosixTerminal.setAttributes(AbstractPosixTerminal.java:52) ~[jline-terminal-3.12.1.jar%2364!/:?]
+	... 4 more
+[16Apr2024 22:32:08.199] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[16Apr2024 22:32:08.199] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[16Apr2024 22:32:08.199] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
